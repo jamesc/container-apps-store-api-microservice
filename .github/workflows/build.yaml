@@ -76,13 +76,13 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          azcliversion: 2.29.2
+          azcliversion: 2.30.0
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy bicep
         uses: azure/CLI@v1
         with:
-          azcliversion: 2.29.2
+          azcliversion: 2.30.0
           inlineScript: |
             az group create -g ${{ secrets.RESOURCE_GROUP }} -l canadacentral
             az deployment group create -g ${{ secrets.RESOURCE_GROUP }} -f ./deploy/main.bicep \
